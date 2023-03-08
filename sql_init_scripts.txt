@@ -1,0 +1,16 @@
+CREATE TABLE Projects(
+                    ProjectID integer,
+                    Description text,
+                    Deadline date,
+                    Created timestamp,
+                    Completed timestamp,
+                    PRIMARY KEY(ProjectID));
+CREATE TABLE Tasks(
+            TaskID integer,
+            Description text,
+            Deadline date,
+            Created timestamp,
+            Completed timestamp,
+            ProjectID integer,
+            PRIMARY KEY(TaskID),
+            FOREIGN KEY(ProjectID) REFERENCES Projects(ProjectID));
